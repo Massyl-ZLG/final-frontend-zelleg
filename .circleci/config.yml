@@ -16,7 +16,7 @@ jobs:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}-v1
 
-   yarn-unit-test: 
+  yarn-unit-test:
     <<: *shared-config
     steps:
       - checkout
