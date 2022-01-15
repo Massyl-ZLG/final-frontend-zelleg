@@ -48,12 +48,12 @@ jobs:
           name: Install netlify
           # --cached : reuse the highest version already used somewhere within the project 
           command: |
-            yarn add netlify-cli 
+            yarn add -D netlify-cli 
       - run:
           # --prod: (boolean) - Deploy to production    
           # --open : (boolean) - Open site after deploy
           name: Deploy app
-          command: yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --dir ~/repo --site $NETLIFY_CLIENT_ID --prod --open 
+          command: yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --dir ~/repo --site $NETLIFY_CLIENT_ID --prod 
   
   docker-build-and-push:
     working_directory: /dockerapp
