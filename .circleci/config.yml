@@ -53,7 +53,7 @@ jobs:
           # --prod: (boolean) - Deploy to production    
           # --open : (boolean) - Open site after deploy
           name: Deploy netlify app
-          command: yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod 
+          command: yarn netlify deploy --auth $NETLIFY_AUTH_TOKEN --dir ~/repo --site $NETLIFY_SITE_ID --prod 
   
   docker-build-and-push:
     working_directory: /dockerapp
