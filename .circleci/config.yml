@@ -17,7 +17,7 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}-v1
 
    yarn-unit-test: 
-     <<: *shared-config
+    <<: *shared-config
     steps:
       - checkout
       - restore_cache:
