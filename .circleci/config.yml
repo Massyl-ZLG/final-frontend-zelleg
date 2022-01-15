@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  install: &shared-config
+    docker:
+      - image: circleci/node:lts-fermium
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}-v1
+            - dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package.json" }}-v1
+
+   yarn-unit-test: 
+     <<: *shared-config
+    steps:
+      - checkout
+      - restore_cache:
+          keys: dependencies-{{ checksum "package.json" }}-v1
+      - run: yarn test:unit
