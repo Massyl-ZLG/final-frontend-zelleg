@@ -40,7 +40,7 @@ jobs:
     <<: *shared-config
     environment: 
       NETLIFY_SITE_ID: $NETLIFY_SITE_ID
-      NETLIFY_ACCESS_TOKEN: $NETLIFY_AUTH_TOKEN:
+      NETLIFY_ACCESS_TOKEN: $NETLIFY_AUTH_TOKEN
     steps:
       - checkout
       - restore_cache:
