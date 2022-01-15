@@ -48,7 +48,7 @@ jobs:
           name: Install netlify
           # --cached : reuse the highest version already used somewhere within the project 
           command: |
-            yarn add --cached netlify-cli 
+            yarn add netlify-cli 
       - run:
           # --prod: (boolean) - Deploy to production    
           # --open : (boolean) - Open site after deploy
